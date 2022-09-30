@@ -58,6 +58,24 @@
                 "type": "ws",
                 "path": "/vmess"
             }
+        },
+        {
+            "type": "shadowtls",
+            "tag": "shadowtls-in",
+            "listen": "0.0.0.0",
+            "listen_port": 8443,
+            "handshake": {
+                "server": "cloud.tencent.com",
+                "server_port": 443
+            },
+            "detour": "shadowsocks-in"
+        },
+        {
+            "type": "shadowsocks",
+            "tag": "ss-in",
+            "listen": "127.0.0.1",
+            "method": "2022-blake3-aes-128-gcm",
+            "password": "8JCsPssfgS8tiRwiMlhARg=="
         }
     ],
     "outbounds": [
